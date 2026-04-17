@@ -1,4 +1,4 @@
-# Benchmarking SLMs on Medical Error Detection and Correction in Clinical Notes
+# Benchmarking Small Language Models on Medical Error Detection and Correction in Clinical Notes
 
 ## Overview
 
@@ -79,47 +79,6 @@ These metrics capture both lexical overlap and semantic quality of the corrected
 └── requirements.txt
 ```
 
----
-
-## Methodology
-
-### Error Detection
-
-Given a clinical note or sentence set, the model is prompted to:
-
-* determine whether a medical error exists
-* identify the sentence index or span containing the error
-
-### Error Correction
-
-Given erroneous clinical text, the model is prompted to generate a medically corrected version.
-
-### Benchmarking Pipeline
-
-1. Load and preprocess MEDEC samples
-2. Run inference with each SLM
-3. Store generated predictions
-4. Evaluate detection and correction performance
-5. Aggregate results across models
-
----
-
-## Results
-
-Results are reported separately for:
-
-* **Error Detection**
-* **Error Correction**
-
-Example result categories:
-
-* Detection accuracy
-* Correction quality scores
-* Overall aggregate performance
-
-
-
----
 
 ## Key Questions
 
@@ -137,7 +96,6 @@ This project is centered around the following questions:
 * Benchmark performance may depend heavily on prompting strategy
 * Automatic correction metrics may not fully capture clinical correctness
 * Good benchmark scores do not guarantee safety in real-world deployment
-* Clinical note complexity may expose weaknesses in smaller models
 
 ---
 
@@ -145,28 +103,9 @@ This project is centered around the following questions:
 
 * Evaluate more SLMs and domain-specialized models
 * Add few-shot and chain-of-thought prompting comparisons
-* Perform qualitative error analysis
-* Study calibration and uncertainty in medical error detection
-* Compare SLMs against larger clinical LLMs
+* Evaluate clinical correctness in the generated corrections of the model 
 
----
-
-## Citation
-
-If you use this repository, please cite:
-
-```bibtex
-@misc{yourname2026medecbenchmark,
-  title={Benchmarking Small Language Models on Medical Error Detection and Correction in Clinical Notes},
-  author={Your Name},
-  year={2026}
-}
-```
-
----
-
-## Acknowledgments
-
+## Acknowledgements
 * MEDEC dataset authors
 * Open-source model and evaluation libraries
 * Prior work in clinical NLP and medical error analysis
